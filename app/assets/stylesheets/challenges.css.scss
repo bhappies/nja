@@ -1,0 +1,194 @@
+// Place all the styles related to the challenges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.challenge{
+  background-color: #0080c1;
+}
+
+.challenges{
+  background-color: #ccc;
+}
+
+.challenge-title{
+  margin: -50px 80px 20px ;
+  text-align: center;
+}
+
+.challenge-title p.mini{
+  font-size: 12px;
+  color: #fff;
+}
+
+.challenge-header{
+  display: block;
+  padding-top: 20px;
+  clear: both;
+}
+
+.challenge-header p{
+  color: #fff;
+}
+
+.header-img{
+  width: 30px;
+  float:left;
+}
+
+#gallery{ position: relative; min-height: 500px;}
+
+#challenge-list .challenge{
+  border: solid 1px #ccc; 
+  border-radius: 10px;
+  background-color:  #2A82BE;
+  height: 300px;
+  width: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 15px;
+}
+
+#prev, #next { 
+  margin-top: 350px;
+  float: left;
+}
+
+
+a, a:hover, a:visited{
+  text-decoration: none;
+  color: #fff;
+}
+
+.clear{
+  clear:both;
+}
+
+a.btn{ 
+  color: #333;
+}
+
+.card-action{
+  text-align: center;
+}
+
+.card-action img{
+  margin: 30px 0 ;
+  width: 100%;
+}
+
+.card-action .points{
+  margin: 10px auto;
+}
+
+.card-action .friends a img{
+  float: right;
+  width: 30px;
+  margin: -30px 10px 0 0;
+}
+
+.card-action .title{
+  margin: 40px 0 20px 0;
+  font-size: 18px;
+}
+
+.people{
+  margin: 20px auto;
+}
+
+.person{
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 5px 8px;
+  float: left;
+}
+
+.my-swiper-slide {
+	background-color: #2a82be;
+	border-radius: 10px;
+}
+
+
+/* Swiper Styles */
+.swiper-container {
+	margin:0 auto;
+	position:relative;
+	overflow:hidden;
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+	-ms-backface-visibility:hidden;
+	-o-backface-visibility:hidden;
+	backface-visibility:hidden;
+	/* Fix of Webkit flickering */
+	z-index:1;
+}
+.swiper-wrapper {
+	position:relative;
+	width:100%;
+	-webkit-transition-property:-webkit-transform, left, top;
+	-webkit-transition-duration:0s;
+	-webkit-transform:translate3d(0px,0,0);
+	-webkit-transition-timing-function:ease;
+
+	-moz-transition-property:-moz-transform, left, top;
+	-moz-transition-duration:0s;
+	-moz-transform:translate3d(0px,0,0);
+	-moz-transition-timing-function:ease;
+
+	-o-transition-property:-o-transform, left, top;
+	-o-transition-duration:0s;
+	-o-transform:translate3d(0px,0,0);
+	-o-transition-timing-function:ease;
+	-o-transform:translate(0px,0px);
+
+	-ms-transition-property:-ms-transform, left, top;
+	-ms-transition-duration:0s;
+	-ms-transform:translate3d(0px,0,0);
+	-ms-transition-timing-function:ease;
+
+	transition-property:transform, left, top;
+	transition-duration:0s;
+	transform:translate3d(0px,0,0);
+	transition-timing-function:ease;
+
+}
+.swiper-slide {
+	float: left;
+}
+
+/* IE10 Windows Phone 8 Fixes */
+.swiper-wp8-horizontal {
+	-ms-touch-action: pan-y;
+}
+.swiper-wp8-vertical {
+	-ms-touch-action: pan-x;
+}
+
+
+
+/* Partial Slides */
+.swiper-partial {
+	width: 400px;
+	height: 650px;
+	color: #fff;
+}
+//.swiper-partial .swiper-slide {
+.swiper-slide{
+	height: 450px;
+	width: 500px;
+}
+
+.blue-slide {
+	background: #0080C1;
+	border-radius: 10px;
+}
+
+.my-btn{
+  background-color: #a7a9ac;
+  border-radius: 0px;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 50px;
+}

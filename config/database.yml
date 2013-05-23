@@ -1,0 +1,6 @@
+development:
+  adapter: mysql2
+  database: nja_dv 
+  username: root
+  password: p0ss1ble
+  host: localhost

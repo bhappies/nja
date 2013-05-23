@@ -1,0 +1,66 @@
+<%- model_class = Challenge -%>
+
+<div id="gallery">
+  <div class="" id="prev">
+     <a href="#previous">« Previous</a>
+  </div>
+  <div class="" id="next">
+     <a href="#next">Next »</a>
+   </div>
+  <div id="challenge-list">
+    <% @challenges.each do |challenge | %>
+        <div class="challenge">
+          <%= link_to challenge.name, challenge %>
+          <div class="card-actions">
+            <%= link_to "Accept Challenge", challenges_path, :class => 'btn btn-large' %>
+          </div> 
+        </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+$(document).ready(function() { //perform actions when DOM is ready
+  var z = 0; //for setting the initial z-index's
+  var inAnimation = false; //flag for testing if we are in a animation
+  var len = $('#challenge-list .challenge').size();
+  $('#challenge-list .challenge').each(function() { //set the initial z-index's
+    z++; //at the end we have the highest z-index value stored in the z variable
+    $(this).css('z-index', z); //apply increased z-index to <img>
+    $(this).css('-webkit-transform','rotate('+(len-z)*2+'deg)'); //apply increased z-index to <img>
+  });
+
+  function swapFirstLast(isFirst) {
+    if(inAnimation) return false; //if already swapping pictures just return
+    else inAnimation = true; //set the flag that we process a image
+    var processZindex, direction, newZindex, inDeCrease; //change for previous or next image
+    if(isFirst) { processZindex = z; direction = '-'; newZindex = 1; inDeCrease = 1; } //set variables for "next" action
+    else { processZindex = 1; direction = '-'; newZindex = z; inDeCrease = -1; } //set variables for "previous" action
+    $('#challenge-list .challenge').each(function() { //process each image
+      if($(this).css('z-index') == processZindex) { //if its the image we need to process
+        $(this).animate({ 'left' : direction + $(this).width() + 'px' }, 'slow', function() { //animate the img above/under the gallery (assuming all pictures are equal height)
+          $(this).css('z-index', newZindex) //set new z-index
+            .animate({ 'left' : '0' }, 'slow', function() { //animate the image back to its original position
+              inAnimation = false; //reset the flag
+	      $(this).css('-webkit-transform','rotate(' +(len-newZindex)*2+'deg)');
+            });
+        });
+      } else { //not the image we need to process, only in/de-crease z-index
+        $(this).animate({ 'left' : '0' }, 'slow', function() { //make sure to wait swapping the z-index when image is above/under the gallery
+          var z1 = parseInt($(this).css('z-index')) + inDeCrease;
+          $(this).css('z-index', parseInt($(this).css('z-index')) + inDeCrease); //in/de-crease the z-index by one
+          $(this).css('-webkit-transform','rotate(' +(len-z1)*2+'deg)');
+        });
+      }
+    });
+    return false; //don't follow the clicked link
+  }
+  $('#next a').click(function() {
+    return swapFirstLast(true); //swap first image to last position
+  });
+  $('#prev a').click(function() {
+    return swapFirstLast(false); //swap last image to first position
+  });
+});
+
+</script>

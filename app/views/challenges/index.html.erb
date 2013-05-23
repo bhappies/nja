@@ -1,0 +1,35 @@
+<%- model_class = Challenge -%>
+
+<div class="swiper-container swiper-partial">
+  <div class="swiper-wrapper">
+    <% @challenges.each do |challenge| %>
+        <div class="swiper-slide blue-slide">
+	  <div class="card-action">
+	    <div class="points">
+	      <%= pluralize(challenge.points, 'point') %>
+	    </div>
+	    <div class="friends">
+	      <%= link_to image_tag('friends.png'), challenge %>
+  	    </div>
+	    <div class="title">
+  	      <%= challenge.name %>
+	    </div>
+	    <%= image_tag challenge.image.blank? ? 'pushup.png' : challenge.image %>
+  	    <%= link_to "Accept Challenge", challenges_path, :class => 'my-btn' %>
+	  </div>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
+<script>
+$(function(){
+	var mySwiper = $('.swiper-container').swiper({
+		//Your options here:
+		mode:'horizontal',
+		loop: true
+		//etc..
+	});
+})
+</script>

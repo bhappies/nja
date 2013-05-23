@@ -1,0 +1,101 @@
+body{
+  padding:0px;
+}
+
+body .container{
+  padding:0 20px;
+}
+
+.profile{
+  background-repeat: no-repeat;
+  background-image: url('/assets/profile.png');
+  background-size: 100%;
+  
+}
+.bar{
+  width: 100%;
+  background-color: none;
+}
+.nav-items{
+  background-color:#414042;
+}
+
+.nav-items > li {
+  padding: 19px 15px 19px 25px;
+  list-style: none;
+}
+
+.nav-items > li > a {
+  float: none;
+  color: #ffffff;
+  text-decoration: none;
+}
+.nav-items > li > a:hover {
+  color: #fff; 
+}
+
+.nav-divider{
+  margin: 0 auto;
+  width: 97%;
+  height: 1px;
+  display: block;
+  background-color: #fcfcfc;
+}
+
+img.profile-logo{
+  width: 40px;
+  height: 40px;
+  margin-top: -8px;
+  float: right;
+  border-radius: 2px;
+}
+
+
+#ninja{
+  margin-left: 20px;
+  float:left;
+}
+
+/* Style for overlay and box */
+.overlay{
+    background:transparent url(/assets/overlay.png) repeat top left;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    z-index:100;
+}
+.nav-slider{
+    position:fixed;
+    width:100%;
+    top:-215px;
+    color:#ccc;
+    z-index:101;
+}
+
+.list-icon{
+  width: 50px;
+  float:right;
+  top: 0;
+  right: 5px;
+  position: fixed;
+  z-index:1000;
+}
+.list-bar{
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: 8px 5px 0px;
+  background-color: #050505;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.list-bar + .list-bar {
+  margin-top: 3px;
+}
